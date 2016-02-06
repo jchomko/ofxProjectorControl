@@ -9,8 +9,9 @@
 //--------------------------------------------------------------
 void ofxProjectorControl::openConnection(string port, int baud)
 {
-    ofSerial::setup(port, baud);
     ofSerial::listDevices();
+
+    ofSerial::setup(port, baud);
 }
 //--------------------------------------------------------------
 void ofxProjectorControl::close()

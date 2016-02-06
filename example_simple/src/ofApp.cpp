@@ -3,9 +3,9 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-    projector.openConnection("tty.usbserial-A702WZAS",9600);
+    projector.openConnection("ttyUSB0",9600);
     ofSleepMillis(1000);
-    projector.projectorOn();
+//    projector.projectorOn();
 }
 //--------------------------------------------------------------
 void ofApp::exit()
@@ -54,7 +54,11 @@ void ofApp::draw()
     stringCommands << "case '{': projector.keystoneDown();" << endl;
     stringCommands << "case 'z': projector.zoom();" << endl;
     stringCommands << "case 'L': projector.language();" << endl;
-    stringCommands << "case '|': projector.selectHDMI" << endl;
+    stringCommands << "case '|': projector.selectHDMI" <<  endl;
+    stringCommands << "case '3': projector.cameraOn" <<  endl;
+    stringCommands << "case '4': projector.cameraOff" <<  endl;
+
+
     
     ofDrawBitmapStringHighlight(stringCommands.str(), 10,10);
     
@@ -159,6 +163,13 @@ void ofApp::keyPressed(int key)
         case '|':
             projector.selectHDMIInput();
             break;
+	case '3':
+		projector.turnOnCamera();
+		break;
+	case '4':
+		projector.turnOffCamera();
+		break;
+
     }
 }
 //--------------------------------------------------------------
