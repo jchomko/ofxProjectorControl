@@ -96,9 +96,9 @@ public:
     void colorSatAdjustment();
     void hueAdjustment();
     void sharpnessAdjustment();
-    string getProjectorName();
-    string getNativeDisplay();
-    string getCompanyName();
+    void getProjectorName();
+    void getNativeDisplay();
+    void getCompanyName();
     void keystoneUp();
     void keystoneDown();
     void zoom();

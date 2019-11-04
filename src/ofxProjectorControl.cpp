@@ -213,21 +213,22 @@ void ofxProjectorControl::sharpnessAdjustment()
     cout << "Sharpness Adjustments: Serial Command " << SHARPNESS_ADJUSTMENT << endl;
 }
 //--------------------------------------------------------------
-string ofxProjectorControl::getProjectorName()
+void ofxProjectorControl::getProjectorName()
 {
     unsigned char command[COMMAND_LENGTH] = QUERY_MODEL_NAME;
     ofSerial::writeBytes(command,COMMAND_LENGTH);
     cout << "Asking for the Projector's name" << endl;
+
 }
 //--------------------------------------------------------------
-string ofxProjectorControl::getNativeDisplay()
+void ofxProjectorControl::getNativeDisplay()
 {
     unsigned char command[COMMAND_LENGTH] = QUERY_NATIVE_DISPLAY_RESOLUTION;
     ofSerial::writeBytes(command,COMMAND_LENGTH);
     cout << "Asking for the Projector's Display Parameters" << endl;
 }
 //--------------------------------------------------------------
-string ofxProjectorControl::getCompanyName()
+void ofxProjectorControl::getCompanyName()
 {
     unsigned char command[COMMAND_LENGTH] = QUERY_COMPANY_NAME;
     ofSerial::writeBytes(command,COMMAND_LENGTH);
